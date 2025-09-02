@@ -121,19 +121,11 @@ A: 检查网络连接和API服务响应速度。插件已内置缓存机制
 ### Q: 某些消息无法翻译？
 A: 插件会自动跳过自己的消息和过短的消息（少于2个字符）
 
-## 📄 开源许可
-
-MIT License - 自由使用、修改和分发
 
 ## 🤝 贡献
 
 欢迎提交Issues和Pull Requests！
 
-
-**项目地址**: [GitHub - AbruptTranslation](https://github.com/Maigee/AbruptTranslation)
 **作者推特**: [@unflwMaige](https://x.com/unflwMaige)
 
----
-
-**享受无障碍的Discord聊天体验！** 🎉
 
