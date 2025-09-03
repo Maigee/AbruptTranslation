@@ -23,7 +23,7 @@ module.exports = class AbruptTranslation {
             model: "",
             targetLang: "zh-CN",
             language: "en", // 插件界面语言：en/zh-CN
-            prompt: "Translate the following text to {targetLang}, return only the translation:\n{text}"
+            prompt: "Translate the following text to {targetLang}, return only the translation::\n\n翻译结果在符合原意的基础上，可以进行口语化/网络用语化/年轻化的加工。\n注意：最终只需要译文，不要出现其他任何提示或者解释或者思考过程，仅需要输出译文。\n\n{text}"
         };
         
         this.loadSettings();
