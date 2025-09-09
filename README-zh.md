@@ -1,0 +1,240 @@
+# AbruptTranslation v3.0.0
+
+> 🌍 简洁、可靠、高效的Discord翻译插件，支持多API管理
+
+一个遵循"好品味"原则构建的BetterDiscord翻译插件，双击即可翻译任意消息。支持多个API配置的无缝切换。
+
+## ✨ 特性
+
+- 🖱️ **双击翻译** - 双击任意消息立即翻译
+- 🎯 **智能缓存** - 自动缓存翻译结果
+- 🌐 **多语言支持** - 支持中文、英文、日文、韩文等主流语言
+- 🤖 **多模型支持** - 兼容OpenAI、DeepSeek等所有OpenAI格式API
+- 💡 **引用消息智能处理** - 自动识别并分别翻译引用内容
+- 🎨 **完美融合** - 译文样式与Discord界面完美融合
+- ⚡ **极简设计** - 遵循"好品味"原则，代码简洁高效
+- 🌏 **多语言界面** - 插件界面支持中英文切换
+- 🔄 **多API管理** - 保存并无缝切换多个API配置
+- 🚨 **增强错误提示** - 详细错误信息和故障排除建议
+
+## 🚀 快速开始
+
+### 安装
+
+1. 确保已安装 [BetterDiscord](https://betterdiscord.app/)
+2. 下载 `AbruptTranslation.plugin.js` 文件
+3. 将文件放入BetterDiscord插件目录：
+   - **Windows**: `%AppData%/BetterDiscord/plugins/`
+   - **macOS**: `~/Library/Application Support/BetterDiscord/plugins/`
+   - **Linux**: `~/.config/BetterDiscord/plugins/`
+4. 重启Discord并在设置中启用插件
+
+### 配置
+
+1. 在BetterDiscord插件设置中找到"AbruptTranslation"
+2. 点击设置按钮配置：
+
+#### 基础设置
+   - **插件语言**: 选择中文或英文界面
+   - **目标语言**: 翻译目标语言 (默认: 中文)
+   - **翻译提示词**: 自定义翻译提示词模板
+
+#### 多API管理
+   - **添加新API**: 点击添加新的API配置
+   - **API列表**: 查看和管理所有保存的API配置
+   - **当前API**: 选择使用的API配置
+
+#### API配置
+   - **配置名称**: 为此API配置设置自定义名称
+   - **API Key**: 此服务的API密钥
+   - **Base URL**: 完整的API端点URL（详见下方配置示例）
+   - **模型**: 使用的AI模型名称
+
+3. 点击"测试API"验证配置
+4. 设置自动保存
+
+### 使用
+
+**基本使用：**
+
+1. **翻译消息** - 双击任意Discord消息
+2. **隐藏译文** - 再次双击同一消息
+3. **重新显示** - 第三次双击消息
+
+**智能特性：**
+
+- 🔄 **智能缓存** - 相同内容不会重复翻译
+- 📝 **引用消息** - 自动分离翻译引用内容
+- 👤 **跳过自己** - 自动跳过自己发送的消息
+- ⚡ **即时响应** - 翻译结果即时显示
+
+**多API管理：**
+
+1. **添加API** - 在设置中点击"添加新API配置"
+2. **切换API** - 使用下拉菜单选择不同的API配置
+3. **编辑/删除** - 管理现有的API配置
+4. **测试API** - 验证当前配置是否正常工作
+
+## 🎨 界面展示
+
+```
+原消息: Hello, how are you?
+━━━━━━━━━━━━━━━━━━━━━━━━
+💬 译文: 你好，你怎么样？
+```
+
+**引用消息示例：**
+```
+📋 引用译文: 这是引用的内容翻译
+💬 回复译文: 这是回复的内容翻译
+```
+
+## ⚙️ API配置示例
+
+> 💡 **支持所有兼容OpenAI格式的API服务** - 只需配置对应的Base URL和模型名称
+
+### OpenAI 官方
+```
+API Key: sk-xxxxxxxxxxxxxxxx
+Base URL: https://api.openai.com/v1
+模型: gpt-3.5-turbo / gpt-4 / gpt-4-turbo
+```
+
+### Google Gemini
+```
+API Key: AIxxxxxxxxxxxxxxxx
+Base URL: https://generativelanguage.googleapis.com/v1beta
+模型: gemini-pro / gemini-1.5-flash / gemini-1.5-pro
+```
+
+### DeepSeek
+```
+API Key: sk-xxxxxxxxxxxxxxxx
+Base URL: https://api.deepseek.com/v1
+模型: deepseek-chat / deepseek-coder
+```
+
+### 智谱AI (GLM)
+```
+API Key: xxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxx
+Base URL: https://open.bigmodel.cn/api/paas/v4
+模型: glm-4 / glm-4-flash / glm-3-turbo
+```
+
+### 月之暗面 (Kimi)
+```
+API Key: sk-xxxxxxxxxxxxxxxx
+Base URL: https://api.moonshot.cn/v1
+模型: moonshot-v1-8k / moonshot-v1-32k / moonshot-v1-128k
+```
+
+### 阿里云通义千问
+```
+API Key: sk-xxxxxxxxxxxxxxxx
+Base URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+模型: qwen-turbo / qwen-plus / qwen-max
+```
+
+### 百川智能
+```
+API Key: xxxxxxxxxxxxxxxx
+Base URL: https://qianfan.baidubce.com/v2
+模型: ernie-3.5-8k / ernie-4.0-8k / ernie-speed
+```
+
+### Anthropic Claude (通过代理)
+```
+API Key: sk-ant-xxxxxxxxxxxxxxxx
+Base URL: https://api.anthropic.com/v1  # 需要代理服务
+模型: claude-3-haiku / claude-3-sonnet / claude-3-opus
+```
+
+### 第三方代理服务
+```
+# 一般都兼容OpenAI格式，请提供完整的端点URL
+API Key: 代理服务提供的Key
+Base URL: 代理服务完整的端点URL（包含/chat/completions）
+模型: 支持的模型名称
+```
+
+## 🔧 自定义翻译提示词
+
+默认提示词：
+```
+Translate the following text to {targetLang}, return only the translation:
+{text}
+```
+
+可以根据需要自定义，支持变量：
+- `{targetLang}` - 目标语言
+- `{text}` - 原文内容
+
+## 🛠️ 技术实现
+
+### 核心设计理念
+
+遵循"好品味"原则：
+
+- **消除特殊情况** - 让切换显示成为正常流程
+- **简洁执念** - 函数短小精悍，只做一件事
+- **实用主义** - 解决实际问题，拒绝过度设计
+
+### 关键技术
+
+- **DOM事件监听** - 全局双击事件捕获
+- **智能元素查找** - 精确定位Discord消息容器
+- **缓存机制** - Map-based翻译结果缓存
+- **CSS优先级处理** - 使用`!important`确保样式生效
+- **异步API调用** - 支持并发翻译请求
+- **多语言界面** - 动态语言切换系统
+- **多API管理** - 动态API配置切换系统
+- **增强错误处理** - 详细错误诊断和用户反馈
+
+## 🐛 常见问题
+
+### Q: 双击没有反应？
+A: 检查API配置是否正确，确保API Key有效
+
+### Q: 译文样式异常？
+A: 插件使用`!important`样式。如有问题，尝试重启Discord
+
+### Q: 翻译速度慢？
+A: 检查网络连接和API服务响应速度
+
+### Q: 某些消息无法翻译？
+A: 插件会自动跳过自己的消息和过短的消息（少于2个字符）
+
+### Q: 如何切换插件界面语言？
+A: 在插件设置中选择"插件语言"
+
+### Q: 如何添加多个API配置？
+A: 点击设置中的"添加新API配置"，填写详细信息
+
+### Q: API测试显示详细错误信息？
+A: 是的，v3.0.0提供具体的故障排除建议
+
+### Q: 可以编辑已有的API配置吗？
+A: 可以，点击API列表中的"编辑"按钮
+
+### Q: 插件如何选择使用哪个API？
+A: 插件使用下拉菜单中选中的API配置
+
+## 📄 开源许可
+
+MIT License - 自由使用、修改和分发
+
+## 🤝 贡献
+
+欢迎提交Issues和Pull Requests！
+
+遵循代码哲学：
+- 代码要有"好品味"
+- 简洁胜过复杂
+- 实用胜过完美
+
+**项目地址**: [GitHub - AbruptTranslation](https://github.com/Maigee/AbruptTranslation)
+**作者推特**: [@unflwMaige](https://x.com/unflwMaige)
+
+---
+
+**享受无障碍的Discord聊天体验！** 🎉
